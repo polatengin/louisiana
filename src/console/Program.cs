@@ -11,6 +11,7 @@ var config = new ConfigurationBuilder()
     .AddAzureAppConfiguration(options =>
     {
       options.UseFeatureFlags()
+             .Connect(Environment.GetEnvironmentVariable("CONFIGURATION_CONNECTION_STRING"));
     })
     .Build();
 
