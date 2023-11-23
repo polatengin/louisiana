@@ -7,6 +7,7 @@ Console.WriteLine("Hello, World!");
 
 var config = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json", optional: true)
+    .AddEnvironmentVariables()
     .Build();
 
 await host.RunAsync();
