@@ -2,6 +2,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Configuration.AddAzureAppConfiguration(options =>
 {
+  options
+         .Connect(Environment.GetEnvironmentVariable("CONFIGURATION_CONNECTION_STRING"));
 });
 
 builder.Services.AddAzureAppConfiguration();
