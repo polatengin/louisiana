@@ -10,4 +10,12 @@ var config = new ConfigurationBuilder()
     .AddEnvironmentVariables()
     .Build();
 
+var backgroundColor = config.GetValue<string>("Lousiana:Settings:BackgroundColor");
+var fontColor = config.GetValue<string>("Lousiana:Settings:FontColor");
+var message = config.GetValue<string>("Lousiana:Settings:Message");
+
+Console.WriteLine($"BackgroundColor = {backgroundColor}");
+Console.WriteLine($"FontColor = {fontColor}");
+Console.WriteLine($"Message = {message}");
+
 await host.RunAsync();
