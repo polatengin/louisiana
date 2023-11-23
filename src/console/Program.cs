@@ -1,4 +1,4 @@
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 
 using IHost host = Host.CreateApplicationBuilder(args).Build();
@@ -10,8 +10,7 @@ var config = new ConfigurationBuilder()
     .AddEnvironmentVariables()
     .AddAzureAppConfiguration(options =>
     {
-      options.UseFeatureFlags()
-             .Connect(Environment.GetEnvironmentVariable("CONFIGURATION_CONNECTION_STRING"));
+      options.UseFeatureFlags().Connect(Environment.GetEnvironmentVariable("CONFIGURATION_CONNECTION_STRING"));
     })
     .Build();
 
