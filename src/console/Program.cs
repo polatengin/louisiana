@@ -10,6 +10,7 @@ var config = new ConfigurationBuilder()
     .AddEnvironmentVariables()
     .AddAzureAppConfiguration(options =>
     {
+      options.UseFeatureFlags()
     })
     .Build();
 
