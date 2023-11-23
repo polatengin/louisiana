@@ -10,3 +10,5 @@ az appconfig kv set --name "${PROJECT_NAME}-config" --key Lousiana:Settings:Font
 az appconfig kv set --name "${PROJECT_NAME}-config" --key Lousiana:Settings:FontSize --value 40 -y
 az appconfig kv set --name "${PROJECT_NAME}-config" --key Lousiana:Settings:Message --value "Data from Azure App Configuration" -y
 az appconfig kv set --name "${PROJECT_NAME}-config" --key Lousiana:Settings:Version --value 1 -y
+
+az appconfig credential list --resource-group "rg-${PROJECT_NAME}" --name "${PROJECT_NAME}-config" --query "[?readOnly == \`true\`] | [0].connectionString" --output tsv
