@@ -8,6 +8,9 @@ Console.WriteLine("Hello, World!");
 var config = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json", optional: true)
     .AddEnvironmentVariables()
+    .AddAzureAppConfiguration(options =>
+    {
+    })
     .Build();
 
 var backgroundColor = config.GetValue<string>("Lousiana:Settings:BackgroundColor");
